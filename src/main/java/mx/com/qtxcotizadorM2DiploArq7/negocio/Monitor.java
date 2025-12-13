@@ -8,9 +8,11 @@ public class Monitor extends Articulo {
 		super(marca, modelo, precioBase, costo, sku);
 	}
 
+    @Override
 	public TipoArticulo getTipo() { return TipoArticulo.MONITOR; }
 
-    public BigDecimal cotizar(int cantidad) {
+    @Override
+    public BigDecimal cotizar(Integer cantidad) {
         if (precioBase == null) {
             return BigDecimal.ZERO;
         }

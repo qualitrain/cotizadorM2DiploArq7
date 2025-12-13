@@ -11,6 +11,7 @@ public class DiscoDuro extends Articulo {
 		this.capacidadAlmacenamiento = capacidadAlmacenamiento;
 	}
 
+    @Override
 	public TipoArticulo getTipo() { return TipoArticulo.DISCO_DURO; }
     
     public void setCapacidadAlmacenamiento(String capacidadAlmacenamiento) {
@@ -20,6 +21,7 @@ public class DiscoDuro extends Articulo {
     	return capacidadAlmacenamiento; 
     }
     
+    @Override
     public BigDecimal cotizar(Integer cantidad) {
 		return this.precioBase.multiply(BigDecimal.valueOf(cantidad));	    		
 	}

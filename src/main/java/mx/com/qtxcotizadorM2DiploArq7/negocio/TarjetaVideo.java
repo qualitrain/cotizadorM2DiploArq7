@@ -16,9 +16,12 @@ public class TarjetaVideo extends Articulo {
     
     public String getMemoria() { return memoria; }
     public void setMemoria(String memoria) { this.memoria = memoria; }
+    
+    @Override
     public TipoArticulo getTipo() { return TipoArticulo.TARJETA_VIDEO; }
 
-    public BigDecimal cotizar(int cantidad) {
+    @Override
+    public BigDecimal cotizar(Integer cantidad) {
         if (precioBase == null) {
             return BigDecimal.ZERO;
         }

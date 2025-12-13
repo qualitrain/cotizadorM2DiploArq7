@@ -1,7 +1,7 @@
 package mx.com.qtxcotizadorM2DiploArq7.negocio;
 import java.math.BigDecimal;
 
-public class Articulo {
+public abstract class Articulo {
     private String marca;
     private String modelo;
     protected BigDecimal precioBase;
@@ -30,7 +30,8 @@ public class Articulo {
     public BigDecimal getCosto() { return costo; }
     public void setCosto(BigDecimal costo) { this.costo = costo; }
 
-    public TipoArticulo getTipo() { return null; }
+    // Las subclases CONCRETAS deben implementar este método!!
+    public abstract TipoArticulo getTipo();
 //    public void setTipo(TipoArticulo tipo) { this.tipo = tipo; }
 
     public String getSku() { return sku; }

@@ -14,12 +14,14 @@ public class Pc extends Articulo {
 		this.listComponentes = new ArrayList<>(listComponentes);
 	}
 
+    @Override
 	public TipoArticulo getTipo() { return TipoArticulo.PC; }   
     
     public void agregarComponente(Articulo componente) {
     	this.listComponentes.add(componente);
     }
     
+    @Override
 	public BigDecimal cotizar(Integer cantidad) {
         if (precioBase == null) {
             return BigDecimal.ZERO;
