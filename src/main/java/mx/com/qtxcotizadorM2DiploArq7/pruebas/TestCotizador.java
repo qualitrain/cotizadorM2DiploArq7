@@ -1,9 +1,12 @@
 package mx.com.qtxcotizadorM2DiploArq7.pruebas;
 import java.math.BigDecimal;
+import java.util.List;
 
 import mx.com.qtxcotizadorM2DiploArq7.negocio.Articulo;
 import mx.com.qtxcotizadorM2DiploArq7.negocio.Cotizador;
-import mx.com.qtxcotizadorM2DiploArq7.negocio.TipoArticulo;
+import mx.com.qtxcotizadorM2DiploArq7.negocio.DiscoDuro;
+import mx.com.qtxcotizadorM2DiploArq7.negocio.Pc;
+import mx.com.qtxcotizadorM2DiploArq7.negocio.TarjetaVideo;
 
 public class TestCotizador {
 
@@ -13,42 +16,23 @@ public class TestCotizador {
 
     public static void testCotizador() {
 
-        // Crear componentes
-        Articulo disco = new Articulo();
-        disco.setModelo("Disco SSD 1TB");
-        disco.setPrecioBase(new BigDecimal("1200"));
-        disco.setTipo(TipoArticulo.DISCO_DURO);
+    	DiscoDuro disco = new DiscoDuro("Seagate","Disco SSD 1TB",new BigDecimal("1200"),
+    			new BigDecimal("600"),"X-SSD-1","1Tb");
 
-        Articulo ram = new Articulo();
-        ram.setModelo("Memoria RAM 16GB");
-        ram.setPrecioBase(new BigDecimal("800"));
-        ram.setTipo(TipoArticulo.TARJETA_VIDEO);
+        TarjetaVideo ram = new TarjetaVideo("Nvidia","NAV-500",new BigDecimal("800"),new BigDecimal("400"),"NV-16-23",
+        		"16GB");
 
-        // Crear un PC compuesto por disco y RAM
-        Articulo pc = new Articulo();
-        pc.setModelo("PC Gamer");
-//        pc.setPrecioBase(new BigDecimal("15000"));
-        pc.setTipo(TipoArticulo.PC);
-
-        pc.agregarComponente(disco);
-//        pc.getListComponentes().add(disco);
-        
-        pc.agregarComponente(ram);
-//        pc.getListComponentes().add(ram);
+        Pc pc = new Pc("Dell","PC Gamer", "DGAME-3411", List.of(disco,ram));
 
         // Crear cotizador
         Cotizador cot = new Cotizador();
         cot.agregarItemCotizacion(pc, 1);
         cot.cotizar();
         
-        Articulo tarjetaVideo = new Articulo();
-        tarjetaVideo.setTipo(TipoArticulo.TARJETA_VIDEO);
-        tarjetaVideo.setMarca("Nvidia");
-        tarjetaVideo.setModelo("X-600");
-        tarjetaVideo.setCosto(new BigDecimal("700.00"));
-        tarjetaVideo.setPrecioBase(new BigDecimal("2000.00"));
-        tarjetaVideo.setSku("X-66-23-1");
+        TarjetaVideo tarjetaVideo = new TarjetaVideo("Nvidia","X-600",new BigDecimal("2000.00"),new BigDecimal("700.00"),"X-66-23-1",
+        		"16GB");
         
+        // Crear OTRO cotizador
         Cotizador cotizador2 = new Cotizador();
         cotizador2.agregarItemCotizacion(tarjetaVideo, 5);
 
