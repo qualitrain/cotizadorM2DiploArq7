@@ -7,12 +7,24 @@ import mx.com.qtxcotizadorM2DiploArq7.negocio.Articulo;
 import mx.com.qtxcotizadorM2DiploArq7.negocio.Cotizador;
 import mx.com.qtxcotizadorM2DiploArq7.negocio.IComponentePc;
 import mx.com.qtxcotizadorM2DiploArq7.negocio.Pc;
+import mx.com.qtxcotizadorM2DiploArq7.negocio.PcBuilder;
 import mx.com.qtxcotizadorM2DiploArq7.negocio.TipoArticulo;
 
 public class TestCotizador {
 
     public static void main(String[] args) {
-        testCotizador();
+    	try {
+    		testCotizador();
+    	}
+    	catch(Exception ex) {
+    		System.out.println(ex.getMessage());
+    		List.of(ex.getStackTrace()).stream().forEach(stI->{
+    			System.out.println(stI.getClassName() + "." 
+    							+ stI.getMethodName() 
+    							+ " linea " + stI.getLineNumber() 
+    							+ " en " + stI.getFileName());
+    			});
+    	}
     }
 
     public static void testCotizador() {
@@ -40,8 +52,27 @@ public class TestCotizador {
     	
 //        TarjetaVideo ram = new TarjetaVideo("Nvidia","NAV-500",new BigDecimal("800"),new BigDecimal("400"),"NV-16-23",
 //        		"16GB");
+    	
+    	Map<String,Object> mapParamsMon = Map.of(
+    			Articulo.CVE_MARCA,"Sony",
+                Articulo.CVE_MODELO, "Rambo 2",
+                Articulo.CVE_PRECIO_BASE, new BigDecimal("15000"),
+                Articulo.CVE_COSTO, new BigDecimal("7000"),
+                Articulo.CVE_SKU,"RAMBO-2026-23");
+    	
+    	Articulo monitor = Articulo.crearArticulo(TipoArticulo.MONITOR, mapParamsMon);
 
-        Pc pc = new Pc("Dell","PC Gamer", "DGAME-3411", List.of((IComponentePc) disco,(IComponentePc)ram));
+    	PcBuilder builderPc = Pc.getBuilder();
+    	
+    	Pc pc = builderPc.agregarParametro(Pc.CVE_MARCA_PC, "Dell")
+		    	          .agregarParametro(Pc.CVE_MODELO_PC, "PC Gamer")
+		    	          .agregarParametro(Pc.CVE_SKU_PC, "DGAME-3411")
+		    	          .agregarDiscoDuro((IComponentePc)disco)
+		    	          .agregarTarjetaVideo((IComponentePc)ram)
+		    	          .agregarMonitor((IComponentePc)monitor)
+		    	          .build();
+    	
+//        Pc pc = new Pc("Dell","PC Gamer", "DGAME-3411", List.of((IComponentePc) disco,(IComponentePc)ram));
 
         // Crear cotizador
         Cotizador cot = new Cotizador();

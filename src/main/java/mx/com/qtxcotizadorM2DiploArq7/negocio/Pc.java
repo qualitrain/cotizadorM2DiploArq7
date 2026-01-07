@@ -5,10 +5,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Pc extends Articulo {
+	public static final String CVE_MARCA_PC = "marca";
+	public static final String CVE_MODELO_PC = "modelo";
+	public static final String CVE_SKU_PC = "sku";
+
     // Una pc esta compuesta de otros artículos
     private List<IComponentePc> listComponentes = new ArrayList<>();
        
-    public Pc(String marca, String modelo, String sku,
+    protected Pc(String marca, String modelo, String sku,
 			List<IComponentePc> listComponentes) {
 		super(marca, modelo, null, null, sku);
 		this.listComponentes = new ArrayList<>(listComponentes);
@@ -35,7 +39,7 @@ public class Pc extends Articulo {
         return total.multiply(new BigDecimal("0.8"));
     }
     
-    public PcBuilder getBuilder() {
+    public static PcBuilder getBuilder() {
     	return new PcBuilder();
     }
 
