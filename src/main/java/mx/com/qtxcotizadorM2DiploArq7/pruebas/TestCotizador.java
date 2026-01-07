@@ -4,11 +4,12 @@ import java.util.List;
 import java.util.Map;
 
 import mx.com.qtxcotizadorM2DiploArq7.negocio.Articulo;
-import mx.com.qtxcotizadorM2DiploArq7.negocio.Cotizador;
 import mx.com.qtxcotizadorM2DiploArq7.negocio.IComponentePc;
 import mx.com.qtxcotizadorM2DiploArq7.negocio.Pc;
 import mx.com.qtxcotizadorM2DiploArq7.negocio.PcBuilder;
 import mx.com.qtxcotizadorM2DiploArq7.negocio.TipoArticulo;
+import mx.com.qtxcotizadorM2DiploArq7.servicios.Cotizador;
+import mx.com.qtxcotizadorM2DiploArq7.servicios.ICotizador;
 
 public class TestCotizador {
 
@@ -75,7 +76,7 @@ public class TestCotizador {
 //        Pc pc = new Pc("Dell","PC Gamer", "DGAME-3411", List.of((IComponentePc) disco,(IComponentePc)ram));
 
         // Crear cotizador
-        Cotizador cot = new Cotizador();
+        ICotizador cot = new Cotizador();
         cot.agregarItemCotizacion(pc, 1);
         cot.cotizar();
         
