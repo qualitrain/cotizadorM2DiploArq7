@@ -1,15 +1,16 @@
-package mx.com.qtxcotizadorM2DiploArq7.pruebas;
+package mx.com.qtx.cotizadorM2DiploArq7.pruebas;
 import java.math.BigDecimal;
 import java.util.List;
 import java.util.Map;
 
-import mx.com.qtxcotizadorM2DiploArq7.negocio.Articulo;
-import mx.com.qtxcotizadorM2DiploArq7.negocio.IComponentePc;
-import mx.com.qtxcotizadorM2DiploArq7.negocio.Pc;
-import mx.com.qtxcotizadorM2DiploArq7.negocio.PcBuilder;
-import mx.com.qtxcotizadorM2DiploArq7.negocio.TipoArticulo;
-import mx.com.qtxcotizadorM2DiploArq7.servicios.Cotizador;
-import mx.com.qtxcotizadorM2DiploArq7.servicios.ICotizador;
+import mx.com.qtx.cotizadorM2DiploArq7.negocio.Articulo;
+import mx.com.qtx.cotizadorM2DiploArq7.negocio.IComponentePc;
+import mx.com.qtx.cotizadorM2DiploArq7.negocio.Pc;
+import mx.com.qtx.cotizadorM2DiploArq7.negocio.PcBuilder;
+import mx.com.qtx.cotizadorM2DiploArq7.negocio.TipoArticulo;
+import mx.com.qtx.cotizadorM2DiploArq7.servicios.Cotizador;
+import mx.com.qtx.cotizadorM2DiploArq7.servicios.CotizadorImplMap;
+import mx.com.qtx.cotizadorM2DiploArq7.servicios.ICotizador;
 
 public class TestCotizador {
 
@@ -76,7 +77,8 @@ public class TestCotizador {
 //        Pc pc = new Pc("Dell","PC Gamer", "DGAME-3411", List.of((IComponentePc) disco,(IComponentePc)ram));
 
         // Crear cotizador
-        ICotizador cot = new Cotizador();
+//        ICotizador cot = new Cotizador();
+        ICotizador cot = new CotizadorImplMap();
         cot.agregarItemCotizacion(pc, 1);
         cot.cotizar();
         
@@ -94,8 +96,11 @@ public class TestCotizador {
 //        		"16GB");
         
         // Crear OTRO cotizador
-        Cotizador cotizador2 = new Cotizador();
+//        Cotizador cotizador2 = new Cotizador();
+        ICotizador cotizador2 = new CotizadorImplMap();
+
         cotizador2.agregarItemCotizacion(tarjetaVideo, 5);
+        cotizador2.agregarItemCotizacion(monitor, 3);
 
          cotizador2.cotizar();
     }

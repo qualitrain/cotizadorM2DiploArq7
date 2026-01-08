@@ -1,4 +1,4 @@
-package mx.com.qtxcotizadorM2DiploArq7.negocio;
+package mx.com.qtx.cotizadorM2DiploArq7.negocio;
 
 import java.util.ArrayList;
 import java.util.HashMap;
