@@ -1,10 +1,14 @@
-package mx.com.qtx.cotizadorM2DiploArq7.negocio;
+package mx.com.qtx.cotizadorM2DiploArq7.negocio.articulos.pc;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
+
+import mx.com.qtx.cotizadorM2DiploArq7.negocio.articulos.DiscoDuro;
+import mx.com.qtx.cotizadorM2DiploArq7.negocio.articulos.Monitor;
+import mx.com.qtx.cotizadorM2DiploArq7.negocio.articulos.TarjetaVideo;
 
 /**
  * @author hp835

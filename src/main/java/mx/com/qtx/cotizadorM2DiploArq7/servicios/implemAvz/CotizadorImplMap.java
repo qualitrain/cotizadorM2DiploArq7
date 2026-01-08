@@ -1,11 +1,12 @@
-package mx.com.qtx.cotizadorM2DiploArq7.servicios;
+package mx.com.qtx.cotizadorM2DiploArq7.servicios.implemAvz;
 
 import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 
-import mx.com.qtx.cotizadorM2DiploArq7.negocio.Articulo;
+import mx.com.qtx.cotizadorM2DiploArq7.negocio.articulos.Articulo;
+import mx.com.qtx.cotizadorM2DiploArq7.servicios.core.ICotizador;
 
 public class CotizadorImplMap implements ICotizador {
 	

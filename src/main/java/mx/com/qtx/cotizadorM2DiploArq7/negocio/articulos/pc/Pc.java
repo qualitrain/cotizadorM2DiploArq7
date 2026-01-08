@@ -1,8 +1,11 @@
-package mx.com.qtx.cotizadorM2DiploArq7.negocio;
+package mx.com.qtx.cotizadorM2DiploArq7.negocio.articulos.pc;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
+
+import mx.com.qtx.cotizadorM2DiploArq7.negocio.articulos.Articulo;
+import mx.com.qtx.cotizadorM2DiploArq7.negocio.articulos.TipoArticulo;
 
 public class Pc extends Articulo {
 	public static final String CVE_MARCA_PC = "marca";

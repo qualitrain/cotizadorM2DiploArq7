@@ -1,4 +1,4 @@
-package mx.com.qtx.cotizadorM2DiploArq7.negocio;
+package mx.com.qtx.cotizadorM2DiploArq7.negocio.articulos;
 import java.math.BigDecimal;
 import java.util.Map;
 

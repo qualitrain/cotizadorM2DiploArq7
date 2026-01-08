@@ -1,16 +1,16 @@
-package mx.com.qtx.cotizadorM2DiploArq7.pruebas;
+package mx.com.qtx.cotizadorM2DiploArq7.ius;
 import java.math.BigDecimal;
 import java.util.List;
 import java.util.Map;
 
-import mx.com.qtx.cotizadorM2DiploArq7.negocio.Articulo;
-import mx.com.qtx.cotizadorM2DiploArq7.negocio.IComponentePc;
-import mx.com.qtx.cotizadorM2DiploArq7.negocio.Pc;
-import mx.com.qtx.cotizadorM2DiploArq7.negocio.PcBuilder;
-import mx.com.qtx.cotizadorM2DiploArq7.negocio.TipoArticulo;
-import mx.com.qtx.cotizadorM2DiploArq7.servicios.Cotizador;
-import mx.com.qtx.cotizadorM2DiploArq7.servicios.CotizadorImplMap;
-import mx.com.qtx.cotizadorM2DiploArq7.servicios.ICotizador;
+import mx.com.qtx.cotizadorM2DiploArq7.negocio.articulos.Articulo;
+import mx.com.qtx.cotizadorM2DiploArq7.negocio.articulos.TipoArticulo;
+import mx.com.qtx.cotizadorM2DiploArq7.negocio.articulos.pc.IComponentePc;
+import mx.com.qtx.cotizadorM2DiploArq7.negocio.articulos.pc.Pc;
+import mx.com.qtx.cotizadorM2DiploArq7.negocio.articulos.pc.PcBuilder;
+import mx.com.qtx.cotizadorM2DiploArq7.servicios.core.ICotizador;
+import mx.com.qtx.cotizadorM2DiploArq7.servicios.implemAvz.CotizadorImplMap;
+import mx.com.qtx.cotizadorM2DiploArq7.servicios.implemBasicas.Cotizador;
 
 public class TestCotizador {
 

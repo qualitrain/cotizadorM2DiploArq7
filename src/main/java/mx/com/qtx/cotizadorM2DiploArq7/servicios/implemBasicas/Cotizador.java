@@ -1,9 +1,10 @@
-package mx.com.qtx.cotizadorM2DiploArq7.servicios;
+package mx.com.qtx.cotizadorM2DiploArq7.servicios.implemBasicas;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
-import mx.com.qtx.cotizadorM2DiploArq7.negocio.Articulo;
+import mx.com.qtx.cotizadorM2DiploArq7.negocio.articulos.Articulo;
+import mx.com.qtx.cotizadorM2DiploArq7.servicios.core.ICotizador;
 
 public class Cotizador implements ICotizador{
 

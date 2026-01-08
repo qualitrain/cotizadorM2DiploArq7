@@ -1,6 +1,8 @@
-package mx.com.qtx.cotizadorM2DiploArq7.negocio;
+package mx.com.qtx.cotizadorM2DiploArq7.negocio.articulos;
 
 import java.math.BigDecimal;
+
+import mx.com.qtx.cotizadorM2DiploArq7.negocio.articulos.pc.IComponentePc;
 
 public class DiscoDuro extends Articulo implements IComponentePc{
     private String capacidadAlmacenamiento;
